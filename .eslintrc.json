@@ -1,3 +1,46 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next", "next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
+  "plugins": ["@typescript-eslint", "import", "prettier"],
+  "rules": {
+    "no-unsafe-optional-chaining": "off",
+    "react/prop-types": "off",
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-use-before-define": ["error", { "variables": false }],
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        "multiline": {
+          "delimiter": "none",
+          "requireLast": false
+        },
+        "singleline": {
+          "delimiter": "comma",
+          "requireLast": false
+        }
+      }
+    ],
+    "camelcase": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "import/named": "warn",
+    "import/namespace": "warn",
+    "import/no-named-as-default": "off",
+    "import/export": "warn",
+    "quotes": ["off", "single"],
+    "import/order": [
+      "warn",
+      {
+        "groups": ["builtin", "external", ["parent", "sibling", "index"]],
+        "newlines-between": "always",
+        "alphabetize": {
+          "caseInsensitive": true
+        }
+      }
+    ]
+  }
 }
