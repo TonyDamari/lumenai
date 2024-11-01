@@ -2,18 +2,18 @@
 import React, { createContext, useCallback, useContext, useEffect, useState } from "react"
 
 import { useArticles } from "@/hooks/articles"
-
+type Filters = {
+  tags: string[]
+  featured: boolean
+}
 interface ArticlesContextType {
   articles: Lumenai.Article[]
   totalArticles: number
   loading: boolean
   searchTerm: string
   setSearchTerm: (term: string) => void
-  filters: {
-    tags: string[]
-    featured: boolean
-  }
-  setFilters: (filters: { tags: string[]; featured: boolean }) => void
+  filters: Filters
+  setFilters: (filters: Filters) => void
   loadMoreArticles: () => void
   latest: boolean
   setLatest: (value: boolean) => void
@@ -77,7 +77,7 @@ export const ArticlesProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       setIsFetchingMore(true)
       setPage((prevPage) => prevPage + 1)
     } else {
-      console.log("No more pages to load.")
+      console.error("No more pages to load.")
     }
   }
 
