@@ -11,6 +11,16 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        lumenai_green: "var(--green)",
+        dark_blue: "var(--dark-blue)",
+        light_blue: "var(--light-blue)",
+      },
+      fontFamily: {
+        sans: ["var(--font-opensans)"],
+      },
+      rotate: {
+        "75": "75deg",
+        "25": "25deg",
       },
     },
   },

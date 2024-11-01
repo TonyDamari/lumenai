@@ -3,19 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --font-opensans: "Open Sans", sans-serif;
+  --background: #f3f3f3;
   --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --light-blue: #528cd3;
+  --dark-blue: #000052;
+  --green: #27c28c;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.font-sans {
+  font-family: var(--font-opensans);
+}
+
+.circular-clip {
+  clip-path: polygon(100% 0, 100% 76%, 76% 100%, 0 100%, 0 0);
+}
+
+.radial-gradient-green {
+  position: absolute;
+  width: 1330.32px;
+  height: 1309.34px;
+  /* left: 795.93px;
+  top: -192px; */
+  background: radial-gradient(105.76% 105.76% at 22.16% 0.05%, #27c28c 52%, #528cd3 100%);
+  filter: blur(300px);
+  transform: rotate(7.68deg);
+  z-index: -1;
+}
+
+.radial-gradient-blue {
+  position: absolute;
+  width: 1045.73px;
+  height: 1370.16px;
+  /* left: -20%;
+  top: 50%; */
+  background: linear-gradient(180deg, #528cd3 0%, #27c28c 67.5%);
+  filter: blur(150px);
+  transform: rotate(26.09deg);
+  z-index: -1;
 }
